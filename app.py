@@ -21,7 +21,8 @@ def load_data():
 # Fungsi untuk preprocessing data
 def preprocess_data(df):
     # Drop kolom yang tidak diperlukan
-    df = df.drop(['Date', 'Location', 'Evaporation', 'Sunshine', 'Cloud9am', 'Cloud3pm'], axis=1)
+    df = df.drop(['Date', 'Location', 'Evaporation', 'Sunshine', 'Cloud9am', 'Cloud3pm'], axis=1, errors='ignore')
+
     
     # Encoding variabel kategorikal
     cat_cols = ['WindGustDir', 'WindDir9am', 'WindDir3pm', 'RainToday']
